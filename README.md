@@ -223,5 +223,12 @@ Students can arrange with tutors the number of lessons they wish at a desired pa
 
 ![GitHub Logo](Font_Roboto.png)
 
+## Work Flow
 
+![GitHub Logo](Work_Flow.png)
+
+
+### ERD
+
+![GitHub Logo](ERD.png)
 
