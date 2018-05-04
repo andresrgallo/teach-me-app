@@ -1,0 +1,26 @@
+<h1>Lessons</h1>
+
+<% if @my_lessons.empty? %>
+  <p>No Lessons</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>price_hr</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @my_lessons.each do |l| %>
+      <tr>
+        <td><%= l.description %></td>
+        <td><%= l.price_hr %></td>
+        <td><%= link_to 'Edit', edit_lesson_path(l) %></td>
+        <td><%= link_to 'Destroy', l, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

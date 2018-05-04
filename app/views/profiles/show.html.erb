@@ -55,4 +55,14 @@
   <%= @profile.status %>
 </p>
 
+
+
+<%# try if p.user.lessons.blank the is a student %>
+
 <%= link_to 'Edit', edit_profile_path(@profile) %>
+<% if @profile.user.lessons.count != 0 %>
+  <%= link_to 'Add Lesson', new_lesson_path %>
+  <%= link_to 'View Your Lessons', your_lessons_path %>
+<% end %>
+
+

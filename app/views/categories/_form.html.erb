@@ -9,7 +9,10 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="field">
+  <%= image_tag @category.image(:medium) %> 
+  </div>
   <div class="field">
     <%= f.label :description %>
     <%= f.text_field :description %>

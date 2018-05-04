@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :lessons do
+    collection do
+      get :your
+    end
+  end
   resources :profiles 
   resources :categories
 

@@ -20,10 +20,10 @@ pre {
 }
 
 a {
-  color: rgb(12, 14, 75);
+  color: #000;
 
   &:visited {
-    color: rgb(107, 15, 15);
+    color: #666;
   }
 
   &:hover {
@@ -82,4 +82,3 @@ div {
 label {
   display: block;
 }
-
