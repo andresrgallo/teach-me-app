@@ -2,8 +2,8 @@
 		<h1>Share your skills or learning something new!</h1>
 		<% @categories.each do |c| %>
 			<div class="col-md-3">
-				<%= c.description %>
-					<%#= image_tag play.play_img.url(:play_index), class: "play" %>
+				<%= link_to c.description, category_path(c.id) %>
+				<%= image_tag c.image(:medium) %>
 				</a>
 			</div>
         <% end %>

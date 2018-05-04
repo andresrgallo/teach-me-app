@@ -2,11 +2,11 @@
   <%= @category.description %>
 </h1>
 
-<%#= image_tag @display_image.image(:medium) %>
+<%= image_tag @category.image(:medium) %>
 
 
 
 
-  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= button_to 'Edit', edit_category_path(@category) %> |
   <%= link_to 'Add New', new_category_path %> |
   <%= link_to 'Back', categories_path %>
