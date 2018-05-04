@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 gem 'figaro'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
