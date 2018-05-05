@@ -2,6 +2,9 @@
 
 <% if @profile.member_id == 2 %>
 <p>
+<%= image_tag @profile.avatar(:thumb) %>
+</p>
+<p>
   <strong>Tutor</strong>
 </p>
 <% else %>
