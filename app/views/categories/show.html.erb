@@ -3,6 +3,18 @@
 </h1>
 
 <%= image_tag @category.image(:medium) %>
+<div class="col-md-8">
+    <% if @category.lessons.any? %>
+      <h3>Lessons</h3>
+      <% @category.lessons.each do |l| %>
+      <ul class="lessons">
+        <%= l.description %>
+        <%= l.tutor.profile.first_name %>
+        <%= l.tutor.profile.last_name %>
+      </ul>
+      <% end %>
+    <% end %>
+  </div>
 
 
 

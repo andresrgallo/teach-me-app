@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+    has_many :lessons
     # validates :description, :presence => true
     has_attached_file :image, styles: {
         thumb: '100x100>',
