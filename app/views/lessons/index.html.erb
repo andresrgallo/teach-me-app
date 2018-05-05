@@ -1,12 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lessons</h1>
+<h1>Your Lessons</h1>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Category</th>
       <th>Description</th>
       <th>Price hr</th>
       <th colspan="3"></th>
@@ -16,7 +14,6 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= lesson.tutor.profile.first_name %></td>
         <td><%= lesson.category.description %></td>
         <td><%= lesson.description %></td>
         <td><%= lesson.price_hr %></td>
