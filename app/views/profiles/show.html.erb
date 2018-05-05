@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<% if @profile.member_id == 2 %>
+<p>
+  <strong>Tutor</strong>
+</p>
+<% else %>
+  <strong>Student</strong>
+<% end %>
+
 <p>
   <strong>First name:</strong>
   <%= @profile.first_name %>
@@ -60,9 +68,7 @@
 <%# try if p.user.lessons.blank the is a student %>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %>
-<% if @profile.user.lessons.count != 0 %>
+<% if @profile.member_id == 2 %>
   <%= link_to 'Add Lesson', new_lesson_path %>
   <%= link_to 'View Your Lessons', your_lessons_path %>
 <% end %>
-
-

@@ -1,4 +1,5 @@
 class Profile < ApplicationRecord
+  belongs_to :member
   belongs_to :user
   validates :first_name, presence: true, length: { minimum: 5 }
   validates :last_name, presence: true, length: { minimum: 5 }
@@ -6,4 +7,5 @@ class Profile < ApplicationRecord
   validates :state, presence: true
   validates :suburb, presence: true
   validates :postcode, presence: true, numericality: true
+  validates :member, presence: true
 end

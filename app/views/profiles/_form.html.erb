@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :member_id %>
+    <%= form.collection_select :member_id, Member.order(:description),:id,:description, include_blank: false %>
+  </div>
+
+  <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address, id: :profile_address %>
   </div>
