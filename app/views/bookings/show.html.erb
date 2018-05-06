@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @booking.student %>
+</p>
+
+<p>
+  <strong>Lesson:</strong>
+  <%= @booking.lesson.description %>
+</p>
+
+<p>
+  <strong>Stripe charge:</strong>
+  <%= @booking.stripe_charge_id %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

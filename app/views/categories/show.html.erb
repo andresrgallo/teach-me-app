@@ -9,16 +9,17 @@
       <% @category.lessons.each do |l| %>
       <ul class="lessons">
         <%= l.description %>
-        <%= l.tutor.profile.first_name %>
-        <%= l.tutor.profile.last_name %>
+        <%= number_to_currency(l.price_hr) %>
+        <% if current_user.profile.member_id == 2 %>
+          <%#= link_to 'Book now', new_booking_path(lesson: l.id) %>
+          <%= link_to 'More Info', l %> <br>
+        <% else %>
+          <%= link_to 'Somehwere', '#' %>
+        <% end %>
+
+        Tutor: <%= link_to l.tutor.profile.first_name, profile_path(l.tutor.profile.id) %>
+        <%= link_to l.tutor.profile.last_name, profile_path(l.tutor.profile.id) %>
       </ul>
       <% end %>
     <% end %>
   </div>
-
-
-
-
-  <%= link_to 'Edit', edit_category_path(@category.id) %> |
-  <%= link_to 'Add New', new_category_path %> |
-  <%= link_to 'Back', categories_path %>
