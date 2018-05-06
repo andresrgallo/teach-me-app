@@ -8,21 +8,18 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
   end
 
-  def current
-    @profile = current_user.profile
-    if @profile.nil?
-      new
-      render 'new'
-    else
-      render 'show'
-    end
-  end
-
+  
   # GET /profiles/1
   # GET /profiles/1.json
+
+  # all new
   def show
-    
-  end
+    @reviews = @profile.reviews if @profile.reviews
+    respond_to do |format|
+        format.html
+        format.json {render json: @profile}
+    end
+end
 
   # GET /profiles/new
   def new
@@ -77,11 +74,12 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = Profile.find(params[:id])
+      @profile = Profile.find_by(id: params[:id])
+      # @profile = Profile.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:user_id, :first_name, :last_name, :address, :state, :suburb, :postcode, :qualifications, :work_experience, :facebook_account, :twitter_account, :status, :member_id, :avatar)
+      params.require(:profile).permit(:user_id, :first_name, :last_name, :address, :state, :suburb, :postcode, :qualifications, :work_experience, :facebook_account, :twitter_account, :status, :member_id, :avatar, :reviews_attributes => [:id, :comment, :user_id])
     end
 end

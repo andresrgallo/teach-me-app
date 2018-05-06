@@ -3,14 +3,31 @@ class ReviewsController < ApplicationController
   before_action :set_profile
   before_action :authenticate_user!
 
-  
+
 def index
-  @reviews = Review.all
+  @reviews = @profile.reviews if @profile.reviews
+  respond_to do |format|
+      format.html { render :index }
+      format.json { render :json => @reviews }
+    end
 end
+
+
+def user_index
+  @reviews = current_user.reviews
+  respond_to do |format|
+      format.html { render :index }
+      format.json { render :json => @reviews }
+  end
+end
+
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    # @review = Review.new
+    @review = @profile.reviews.build
+    set_profile
+    @review.profile = @profile
   end
 
   # GET /reviews/1/edit
@@ -20,32 +37,29 @@ end
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
-    @review.student_id = current_user.id
-    @review.profile_id = @profile.id
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to @profile, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
-      else
-        format.html { render :new }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
-    end
+    @review = @profile.reviews.build(review_params)
+        if @review.save
+            respond_to do |format|
+                format.html { redirect_to profile_path(@review.profile)}
+                format.json { render :json => @review }
+            end
+        else
+            set_profile
+            render :new
+        end
   end
 
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
-    respond_to do |format|
       if @review.update(review_params)
-        format.html { redirect_to @review, notice: 'Review was successfully updated.' }
-        format.json { render :show, status: :ok, location: @review }
+        redirect_to profile_path(@profile)
+        # format.html { redirect_to @review, notice: 'Review was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @review }
       else
         format.html { render :edit }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
+        # format.json { render json: @review.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # DELETE /reviews/1
@@ -65,11 +79,12 @@ end
     end
 
     def set_profile
-      @profile = Profile.find(params[:profile_id])
+      @profile = Profile.find_by(id: params[:profile_id])
+      # @profile = Profile.find(params[:profile_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:user_id, :rating, :comment)
+      params.require(:review).permit(:user_id, :profile_id, :student_id, :rating, :comment)
     end
 end

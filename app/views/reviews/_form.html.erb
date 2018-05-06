@@ -1,4 +1,9 @@
 <%= form_for([@profile, @review]) do |form| %>
+
+  <%= form.hidden_field :student_id, value: current_user.id %>
+
+    <%= form.hidden_field :profile_id, value: @profile.id %>
+    
   <% if review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -24,4 +29,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <a class="btn btn-primary" href="/profiles/<%= @profile.id%>" role="button">Back</a>
 <% end %>

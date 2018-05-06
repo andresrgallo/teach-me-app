@@ -1,0 +1,5 @@
+<% if !review.nil? && !review.student.nil?%>
+        <strong><p class="list-group-item-text">Student: <%= review.student.profile.first_name%></p></strong>
+        <p class="list-group-item-text">Comment: <%= review.comment %></p>
+        <p class="list-group-item-text">Rating: <%= review.rating %></p>
+<% end %>

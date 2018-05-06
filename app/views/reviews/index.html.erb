@@ -1,33 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Reviews</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Tutor</th>
-      <th>Review by</th>
-      <th>Rating</th>
-      <th>Comment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @reviews.each do |review| %>
-      <tr>
-        <td><%= review.profile.first_name %></td>
-        <td><%= review.student.profile.first_name %></td>
-        <td><%= review.rating %></td>
-        <td><%= review.comment %></td>
-        <td><%#= link_to 'Show', review %></td>
-        <td><%#= link_to 'Edit', edit_profile_review_path(review) %></td>
-        <td><%#= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+# <div class="container">
+    <% if @reviews.present? %>
+        <%= render @reviews %>
+    <% else %>
+        <h2>You haven't reviewed any Profile yet. </h2>
     <% end %>
-  </tbody>
-</table>
+    <h2>Here are Profiles that all users have reviewed. </h2>
+    <ul>
+    <% Review.reviewed_profile.each do |t| %>
+        <% if !t.nil? %>
+            <li><%= link_to t.first_name, t %></li>
+        <% end %>
+    <% end %>
+    </ul>
 
-<br>
 
-<%= link_to 'Back to Lessons', lessons_path %>
+</div>

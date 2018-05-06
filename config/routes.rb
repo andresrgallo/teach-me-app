@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :profiles do
-    resources :reviews, except: [:show]
+    resources :reviews
   end
 
   get 'profile', to: 'profiles#current'
