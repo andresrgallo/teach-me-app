@@ -15,10 +15,12 @@ class ApplicationController < ActionController::Base
 
     def after_sign_in_path_for(resource_or_scope)
 
+      
       if Profile.exists?(:user_id => current_user.id)
         profile_path(current_user.profile.id)
       else
-        new_profile_path
+      "/profile"
+        # new_profile_path
       end
 
     end

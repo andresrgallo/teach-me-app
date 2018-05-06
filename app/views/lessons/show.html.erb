@@ -2,7 +2,11 @@
 
 <p>
   <strong>Tutor:</strong>
+  <% if user_signed_in? %>
   <%= link_to @lesson.tutor.profile.first_name, profile_path(@lesson.tutor.profile.id) %>
+  <% else %>
+  <%= @lesson.tutor.profile.first_name %>
+  <% end %>
 </p>
 
 <p>
@@ -22,11 +26,15 @@
 
 <p>
   <strong>Price hr:</strong>
-  <%= @lesson.price_hr %>  
+  <%= @lesson.price_hr %>
+  <% if user_signed_in? %>
   <% if @lesson.tutor != current_user %>
-  <%= link_to 'Book me', new_booking_path(lesson: @lesson.id) %> |
+  <%= link_to 'Book me', new_booking_path(lesson: @lesson.id) %>
   <% end %>
   </p>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+  <% if @lesson.tutor == current_user %>
+<%= link_to 'Edit', edit_lesson_path(@lesson) %>
+  <% end %>
+  <% end %>
 <%= link_to 'Back to lessons', category_path(@lesson.category.id) %>

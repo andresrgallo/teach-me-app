@@ -8,6 +8,16 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
   end
 
+  def current
+    @profile = current_user.profile
+    if @profile.nil?
+      new
+      render 'new'
+    else
+      render 'show'
+    end
+  end
+
   # GET /profiles/1
   # GET /profiles/1.json
   def show

@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<% if @profile.user.id == current_user.id %>
+<p><%= link_to 'Edit Profile', edit_profile_path(@profile) %></p>
+<% end %>
 <% if @profile.member_id == 2 %>
 <p>
 <%= image_tag @profile.avatar(:thumb) %>
@@ -70,8 +73,9 @@
 
 <%# try if p.user.lessons.blank the is a student %>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %>
+<% if @profile.user.id == current_user.id %>
 <% if @profile.member_id == 2 %>
   <%= link_to 'Add Lesson', new_lesson_path %>
   <%= link_to 'View Your Lessons', your_lessons_path %>
+<% end %>
 <% end %>

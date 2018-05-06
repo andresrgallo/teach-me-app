@@ -10,16 +10,20 @@
       <ul class="lessons">
         <%= l.description %>
         <%= number_to_currency(l.price_hr) %>
-        <% if current_user.profile.member_id == 2 %>
+        <% if l.tutor.profile.member_id == 2 %>
           <%#= link_to 'Book now', new_booking_path(lesson: l.id) %>
           <%= link_to 'More Info', l %> <br>
         <% else %>
           <%= link_to 'Somehwere', '#' %>
         <% end %>
-
+        <% if user_signed_in? %>
         Tutor: <%= link_to l.tutor.profile.first_name, profile_path(l.tutor.profile.id) %>
         <%= link_to l.tutor.profile.last_name, profile_path(l.tutor.profile.id) %>
+        <% else %>
+        <%= l.tutor.profile.first_name %>
+        <%= l.tutor.profile.last_name %>
       </ul>
+      <% end %>
       <% end %>
     <% end %>
   </div>
