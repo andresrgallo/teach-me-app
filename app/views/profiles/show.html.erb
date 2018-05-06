@@ -69,8 +69,6 @@
   <%= @profile.status %>
 </p>
 
-
-
 <%# try if p.user.lessons.blank the is a student %>
 
 <% if @profile.user.id == current_user.id %>
@@ -79,3 +77,22 @@
   <%= link_to 'View Your Lessons', your_lessons_path %>
 <% end %>
 <% end %>
+  <%= link_to 'Rate me!!', new_profile_review_path(@profile) %>
+  <%= link_to 'See all Reviews', profile_reviews_url(@profile) %>
+
+    <%# if @reviews.blank? %>
+     <h3>No reviews just yet, would you like to add the first!</h3>
+    <%# else %>
+  <%# @reviews.each do |review| %>
+    <div class="reviews">
+      <%#= review.rating %>
+      <%#= review.comment %>
+      <%#= review.student.profile.first_name %>
+      <%#= time_ago in_words(review.created_at) %>
+  <%# end %>
+  <%# end %>
+   
+    </div>
+
+
+

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :profile
+  has_many :reviews
   has_many :lessons, foreign_key: :tutor
   has_many :tutors, through: :lessons
   # Include default devise modules. Others available are:

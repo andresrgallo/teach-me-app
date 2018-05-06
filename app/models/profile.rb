@@ -3,6 +3,7 @@ class Profile < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   belongs_to :member
   belongs_to :user
+  has_many :reviews
   validates :first_name, presence: true, length: { minimum: 5 }
   validates :last_name, presence: true, length: { minimum: 5 }
   validates :address, presence: true

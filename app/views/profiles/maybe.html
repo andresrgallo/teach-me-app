@@ -1,0 +1,95 @@
+
+
+
+
+
+
+
+
+
+  <p id="notice"><%= notice %></p>
+
+<% if @profile.user.id == current_user.id %>
+<p><%= link_to 'Edit Profile', edit_profile_path(@profile) %></p>
+<% end %>
+<% if @profile.member_id == 2 %>
+<p>
+<%= image_tag @profile.avatar(:thumb) %>
+</p>
+
+<div class="table-responsive">
+  <div class="table">
+  <tbody>
+    <tr>
+      <td><strong>Tutor</strong></td>
+    </tr>
+    <% else %>
+    <tr>
+      <td><strong>Student</strong></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td><strong>First name:</strong></td>
+      <td><%= @profile.first_name %></td>
+    </tr>
+    <tr>
+      <td> <strong>Last name:</strong></td>
+      <td><%= @profile.last_name %></td>
+    </tr>
+    <tr>
+      <td><strong>Address:</strong></td>
+      <td><%= @profile.address %><td>
+    </tr>
+    <tr>
+      <td><strong>State:</strong></td>
+      <td><%= @profile.state %></td>
+    </tr>
+    <tr>
+      <td><strong>Suburb:</strong></td>
+      <td><%= @profile.suburb %></td>
+    </tr>
+    <tr>
+      <td><strong>Postcode:</strong></td>
+      <td><%= @profile.postcode %></td>
+    </tr>
+      <td><strong>Qualifications:</strong></td>
+      <td><%= @profile.qualifications %></td>
+    </tr>
+    <tr>
+      <td><strong>Work experience:</strong></td>
+      <td><%= @profile.work_experience %></td>
+    </tr>
+    <tr>
+      <td><strong>Facebook account:</strong></td>
+      <td><%= @profile.facebook_account %></td>
+    </tr>
+    <tr>
+      <td><strong>Twitter account:</strong></td>
+      <td><%= @profile.twitter_account %></td>
+    </tr>
+    <tr>
+      <td><strong>Status:</strong></td>
+      <td><%= @profile.status %></td>
+    </tr>
+    </tbody>
+    </table>
+  <%= link_to 'Rate me!!', new_profile_review_path(@profile) %>
+  </div>
+</div>
+
+
+<%# try if p.user.lessons.blank the is a student %>
+
+<% if @profile.user.id == current_user.id %>
+<% if @profile.member_id == 2 %>
+  <%= link_to 'Add Lesson', new_lesson_path %>
+  <%= link_to 'View Your Lessons', your_lessons_path %>
+<% end %>
+<% end %>
+
+  <%# @profile.reviews.each do |review| %>
+      <%#= review.rating %>
+      <%#= review.content %>
+      <%#= review.student.profile.first_name %>
+      <%#= time_ago in_words(review.created_at) %>
+  <%# end %>

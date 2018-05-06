@@ -1,8 +1,3 @@
-       <div class="row">
-		<% if user_signed_in? %>
-		<%= link_to "Profile", profile_path(current_user.profile.id) %>
-		<% end %>
-		</div>
 <div class="row">
 		<h1>Share your skills or learning something new!</h1>
 		<% @categories.each do |c| %>
