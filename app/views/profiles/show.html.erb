@@ -64,11 +64,6 @@
   <%= @profile.twitter_account %>
 </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @profile.status %>
-</p>
-
 <% if @profile.user.id != current_user.id %>
 <% if !current_user %>
         <p><a class="btn btn-primary" href="/users/sign_in" role="button">Sign in and add reviews!</a></p>

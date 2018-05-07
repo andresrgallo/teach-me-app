@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @lesson = Lesson.find(params[:lesson])
     @booking.lesson = @lesson
-    @amount = @lesson.price_hr_cents
+    @amount = @lesson.price_hr
   end
 
   # GET /bookings/1/edit
@@ -40,7 +40,7 @@ class BookingsController < ApplicationController
     end
     @lesson = @booking.lesson
     # Amount in cents
-    @amount = @lesson.price_hr_cents
+    @amount = @lesson.price_hr
 
     respond_to do |format|
       if @booking.save

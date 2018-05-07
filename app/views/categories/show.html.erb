@@ -9,7 +9,7 @@
       <% @category.lessons.each do |l| %>
       <ul class="lessons">
         <%= l.description %>
-        <%= number_to_currency(l.price_hr) %>
+        <%= number_to_currency(l.price_hr) %> AUD
         <% if l.tutor.profile.member_id == 2 %>
           <%#= link_to 'Book now', new_booking_path(lesson: l.id) %>
           <%= link_to 'More Info', l %> <br>

@@ -24,12 +24,33 @@
   <%= @lesson.details %>
 </p>
 
-<p>
-  <strong>Price hr:</strong>
-  <%= @lesson.price_hr %>
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $<%= @lesson.price_hr %> AUD</span>
+    </label>
+  </article>
+<%= hidden_field_tag 'lesson_id', @lesson.id %>
+<% if @lesson.tutor.id != current_user.id %>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description=<%= @lesson.description %>
+          data-amount=<%= @lesson.price_hr*100 %>
+          data-label="Book Now"
+          data-locale="auto"></script>
+<% end %>
+<% end %>
+
+
+
   <% if user_signed_in? %>
   <% if @lesson.tutor != current_user %>
-  <%= link_to 'Book me', new_booking_path(lesson: @lesson.id) %>
+  <%= link_to 'Check Booking', new_booking_path(lesson: @lesson.id) %>
   <% end %>
   </p>
 
