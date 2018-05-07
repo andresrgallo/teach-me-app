@@ -76,10 +76,10 @@
   </div>
   <div class="fieldset">
         <legend>Add your review: </legend>
-        <%= f.fields_for :reviews, @profile.reviews.build do |ff| %>
+        <%= form.fields_for :reviews, @profile.reviews.build do |ff| %>
         <div>
-            <%= ff.label :content%> <br>
-            <%= ff.text_area :content, size: "80x5" %>
+            <%= ff.label :comment%> <br>
+            <%= ff.text_area :comment, size: "80x5" %>
             <%= ff.hidden_field :user_id, value: current_user.id %>
         </div>
         <% end %>

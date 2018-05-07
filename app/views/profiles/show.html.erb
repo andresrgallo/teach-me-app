@@ -77,9 +77,13 @@
 
     
 
+    <% if @reviews.blank? %>
+        <h3>No reviews just yet, be the first!</h3>
+        <% else %>
     <div class="list-group">
         <%= render @reviews %>
     </div>
+    <% end %>
 
 <%# try if p.user.lessons.blank the is a student %>
 
@@ -92,7 +96,6 @@
   <%#= link_to 'Rate me!!', new_profile_review_path(@profile) %>
   <%#= link_to 'See all Reviews', profile_reviews_url(@profile) %>
 
-    <%# if @reviews.blank? %>
     <%# else %>
   <%# @reviews.each do |review| %>
     <div class="reviews">
