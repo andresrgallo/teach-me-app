@@ -21,6 +21,10 @@ def user_index
   end
 end
 
+def blank_stars
+  5 - rating.to_i
+ end
+
 
   # GET /reviews/new
   def new

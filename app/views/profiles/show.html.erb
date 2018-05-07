@@ -69,16 +69,18 @@
   <%= @profile.status %>
 </p>
 
+<% if @profile.user.id != current_user.id %>
 <% if !current_user %>
         <p><a class="btn btn-primary" href="/users/sign_in" role="button">Sign in and add reviews!</a></p>
     <% else %>
         <a class="btn btn-primary" href="/profiles/<%=@profile.id%>/reviews/new" role="button">Add review for <%= @profile.first_name %></a>
     <% end %>
+    <% end %>
 
     
 
     <% if @reviews.blank? %>
-        <h3>No reviews just yet, be the first!</h3>
+        <h3>No reviews just yet</h3>
         <% else %>
     <div class="list-group">
         <%= render @reviews %>
