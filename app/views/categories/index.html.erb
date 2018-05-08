@@ -1,9 +1,9 @@
 <div class="row">
 		<h1>Share your skills or learning something new!</h1>
 		<% @categories.each do |c| %>
-			<div class="col-md-3">
+			<div style="padding-bottom:3rem" class="col-sm-4 text-center pb-3">
 				<%= link_to c.description, category_path(c.id) %>
-				<%= image_tag c.image(:medium) %>
+				<%= image_tag c.image(:square) %>
 				</a>
 			</div>
         <% end %>

@@ -72,48 +72,55 @@ Students can arrange with tutors the number of lessons they wish at a desired pa
 - As a Tutor I want to edit my Lesson's listing
 - in case I want to change the description or price.
 
-**Feature:** Edit Lesson Listing
-- As a Tutor I want to edit my Lesson's listing
-- in case I want to change the description or price.
-
-**Scenario:** User edits book listing
-- Given I'm a logged in User
-- When I go to the edit page for a book listing that is mine
-- And I change the text in the text fields and/or upload a new book image
-- And I click "Update book"
-- Then I should see the detailed view page for that book
+**Scenario:** User edits Lesson listing
+- As a tutor, when I loggedin I want to be able to edit only the lessons that are mine,
+- And if I change any description 
+- And I click "Update lesson"
+- Then I should see the detailed view page for that lesson
 - And the details should be updated
 
----
+***User should not be able to edit a lesson that is not theirs***
 
-***User should not be able to edit a book listing that is not theirs***
+**Feature:** Unable to edit other user's Lesson listing
+- As a User and Tutor
+- I want nobody other than me to be able to edit my lessons
+- Because I want to have control over my listings
 
-**Feature:** Unable to edit other user's book listing
-- As a User
-- I want nobody other than me to be able to edit my book listings
-- Because I want to have control over my book listings
-
-**Scenario:** User attempts to edit another user's book listing
+**Scenario:** User attempts to edit another user's lessons
 - Given I'm a logged in User
-- When I go to the edit book page for another user's book listing
-- Then I am redirected back to the detailed view page for that book listing
+- I won't be able to see an option to edit any other tutors
+- lessons.
 
----
+***User should be able to delete a lesson that is theirs***
 
-***User should be able to delete a book listing that is theirs***
+**Feature:** Delete Lesson Listing
+- As a Tutor
+- I want to delete one of my lessons
+- Because I do not want to carry on giving that lesson
 
-**Feature:** Delete Book Listing
-- As a User
-- I want to delete one of my book listings
-- Because I have decided not to sell it
-
-**Scenario:** User deletes book listing
+**Scenario:** User deletes lesson
 - Given I'm a logged in User
-- When I go to the edit page for a book listing that is mine
-- And I click 'delete book'
-- Then the book listing should be deleted from the database
+- When I go to the edit page for a lesson that is mine
+- And I click 'delete lesson'
+- Then the lesson should be deleted from the database and not
+- available for booking.
 
----
+
+***User should be able to give reviews to a Turtor***
+
+**Feature:** Delete Lesson Listing
+- Given I'm a logged in User
+- When I go to a profile that is not mine
+- and click on add review
+- I want to be able to add a review and a rating
+
+**Scenario:** User deletes lesson
+- Given I'm a logged in User
+- When I add a review and a rating
+- then I should be able to see my review and
+- rating printed under the profile
+
+
 
 
 ***User should not be able to open a message conversation with themselves***
@@ -144,74 +151,45 @@ Students can arrange with tutors the number of lessons they wish at a desired pa
 
 ---
 
-***User should be able to view book listings on homepage without logging in***
+***User should be able to view skill categories on homepage without logging in***
 
 **Feature:** Homepage viewable without login
 - As a User
-- I want to view book listings without signing in
-- Because I want to know it's worth signing up before I do so
+- I want to view all skill categories without signing in
+- Because I want to know if there are any categories I am
+- Interested in
 
 **Scenario:** User visits homepage
 - Given I'm a logged out user
 - When I go to the homepage
-- Then I can view the book listings
+- Then I can view all the skill categories
 
----
+***User should be able to view lessons available under all categories when clicking them without logging in***
 
-***User should be able to view detailed book listing without logging in***
-
-**Feature:** Detailed book view viewable without login
+**Feature:** Lessons per Category viewable without login
 - As a User
-- I want to view book listings without signing in
-- Because I want to know it's worth signing up before I do so
+- I want to view all lessons available per skill category without signing in
+- Because I want to know if there are any lessons I am
+- Interested in
 
-**Scenario:** User visits detailed book view page
+**Scenario:** User clicks on one Category on the Homepage
 - Given I'm a logged out user
-- When I go to the detailed book view page
-- Then I can view the detailed book view page
+- When I go to the homepage and click on any category
+- I can view all the lessons listed under any category
 
----
 
-***User should not be able to view Messages page without logging in***
+***User should not be able to view any user Profile without logging in***
 
-**Feature:** User must be logged in to view messages page
-- As a User
-- I want to know that only users who are logged in can message me
-- Because I don't want to get spammed
+**Feature:** User must be logged in to see just the tutors profile
+- As site Admin
+- I want users to be required to log in in order to view a tutor profile
+- To encourage users to signup and book lessons
 
-**Scenario:** User visits messages page
+**Scenario:** User dont have any access to profiles unless is logged in
 - Given I'm a logged out user
-- When I go to the messages page
+- When I type a /profile url
 - Then I am redirected to the login page
 
----
-
-***User should not be able to view New Book form page without logging in***
-
-**Feature:** User must be logged in to see the add new book form
-- As site Admin
-- I want users to be required to log in in order to add a book listing
-- Because I want to encourage users to create an account on the site
-
-**Scenario:** User visits add new book page
-- Given I'm a logged out user
-- When I go to the add new book page
-- Then I am redirected to the login page
-
----
-
-***When logged in, user should not be able to view any page other than 'create profile' until they have created a profile***
-
-**Feature:** User must create a profile upon signup in order to interact on the site
-- As site Admin
-- I want all users to be required to have a profile
-- Because it builds a sense of community
-
-**Scenario:** User without a profile attempts to visit any page
-- Given I'm a logged in user
-- And I don't have a profile
-- When I go to any page other than the create profile page
-- Then I am redirected to the create profile page
 
 ## Style Guide
 
