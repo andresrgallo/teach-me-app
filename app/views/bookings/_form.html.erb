@@ -1,11 +1,21 @@
 <h1>Your Booking</h1>
 
+
+
+<h3><strong>Lesson:</strong></h3>
 <h3>
   <%= @lesson.description %> $<%= @lesson.price_hr %> AUD
 </h3>
 
-Tutor: <%= @lesson.tutor.profile.first_name %>
-        <%= @lesson.tutor.profile.last_name %>
+<p>
+  <h3><strong>Tutor:</strong></h3>
+  <% if user_signed_in? %>
+  <h3><%= link_to @lesson.tutor.profile.first_name, profile_path(@lesson.tutor.profile.id) %>
+  <%= link_to @lesson.tutor.profile.last_name, profile_path(@lesson.tutor.profile.id) %>
+  <% else %>
+  <%= @lesson.tutor.profile.first_name %>
+  <% end %></h3>
+</p>
 
 
 <%= form_tag charges_path do %>
@@ -15,9 +25,8 @@ Tutor: <%= @lesson.tutor.profile.first_name %>
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: $<%= @lesson.price_hr %> Aud</span>
-    </label>
-  </article>
+<h3><strong>Content:</strong></h3>
+     <h3><%= @lesson.details %></h3>
+  </article><br>
 <% end %>
 

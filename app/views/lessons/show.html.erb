@@ -1,15 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Tutor:</strong>
-  <% if user_signed_in? %>
-  <%= link_to @lesson.tutor.profile.first_name, profile_path(@lesson.tutor.profile.id) %>
-  <% else %>
-  <%= @lesson.tutor.profile.first_name %>
-  <% end %>
-</p>
-
-<p>
   <strong>Category:</strong>
   <%= @lesson.category.description %>
 </p>
@@ -17,11 +8,6 @@
 <p>
   <strong>Description:</strong>
   <%= @lesson.description %>
-</p>
-
-<P>
-  <strong>Details:</strong>
-  <%= @lesson.details %>
 </p>
 
 <%= form_tag charges_path do %>
@@ -34,7 +20,7 @@
     <label class="amount">
       <span>Amount: $<%= @lesson.price_hr %> AUD</span>
     </label>
-  </article>
+  </article><br>
 <%= hidden_field_tag 'lesson_id', @lesson.id %>
 <% if @lesson.tutor.id != current_user.id %>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -44,15 +30,16 @@
           data-label="Book Now"
           data-locale="auto"></script>
 <% end %>
-<% end %>
+<% end %> <br>
 
 
 
   <% if user_signed_in? %>
   <% if @lesson.tutor != current_user %>
-  <%= link_to 'Check Booking', new_booking_path(lesson: @lesson.id) %>
+  <button type="button" class="btn btn-outline-dark"><%= link_to 'Check Booking', new_booking_path(lesson: @lesson.id) %></button>
   <% end %>
-  </p>
+  <br>
+  
 
   <% if @lesson.tutor == current_user %>
 <%= link_to 'Edit', edit_lesson_path(@lesson) %>
