@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     end
   end
 
+  # Static pages routes
+  get  '/about',   to: 'static_pages#about'
+  get  '/contact', to: 'static_pages#contact'
+
   resources :profiles do
     resources :reviews
   end
@@ -18,8 +22,6 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :charges
-
-  get 'thanks', to: 'charges#thanks'
 
   # if people type wrong url, redirect to root
   get '*path' => redirect('/')
