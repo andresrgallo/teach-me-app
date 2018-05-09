@@ -8,9 +8,11 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
   end
   
+  # Display all lessons from curren_user if is a tutor
   def your
     @my_lessons = Lesson.where(tutor: current_user)
   end
+
   # GET /lessons/1
   # GET /lessons/1.json
   def show

@@ -11,8 +11,8 @@ class BookingsController < ApplicationController
     @my_bookings = Booking.where(student_id: current_user)
   end
 
-  def add_booking
-  end
+  # Display all lessons booked by students for a tutor
+  
 
   # GET /bookings/1
   # GET /bookings/1.json

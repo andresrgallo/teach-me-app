@@ -35,12 +35,6 @@
 
 
   <% if user_signed_in? %>
-  <% if @lesson.tutor != current_user %>
-  <button type="button" class="btn btn-outline-dark"><%= link_to 'Check Booking', new_booking_path(lesson: @lesson.id) %></button>
-  <% end %>
-  <br>
-  
-
   <% if @lesson.tutor == current_user %>
 <%= link_to 'Edit', edit_lesson_path(@lesson) %>
   <% end %>

@@ -12,7 +12,14 @@ class Category < ApplicationRecord
     
       # Validate the attached image is image/jpg, image/png, etc
       validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-    
+ 
+      def self.search(term)
+        if term
+          where('description LIKE ?', "%#{term.capitalize}%")
+        else
+          all
+        end
+      end
       
       
 end

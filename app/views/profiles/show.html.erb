@@ -73,6 +73,7 @@
   <% if current_user.profile.member_id == 2 && current_user.id == @profile.user.id  %>
   <%= link_to 'Add Lesson', new_lesson_path %>
   <%= link_to 'View Your Lessons', your_lessons_path %>
+  <%= link_to 'Lessons booked', bookings_path %>
 <% end %>
 
 <% if @profile.user.id != current_user.id %>

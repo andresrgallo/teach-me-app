@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Your Name</th>
-      <th>Your Surname</th>
+      <th>Student Name</th>
+      <th>Surname</th>
       <th>Lesson Booked</th>
       <th>Tutor</th>
       <th colspan="3"></th>
@@ -15,12 +15,14 @@
 
   <tbody>
     <% @bookings.each do |booking| %>
+    <% if booking.lesson.tutor.id == current_user.id %>
       <tr>
         <td><%= booking.student.profile.first_name %></td>
         <td><%= booking.student.profile.last_name %></td>
         <td><%= booking.lesson.description %></td>
         <td><%= link_to booking.lesson.tutor.profile.first_name, profile_path(booking.lesson.tutor.profile.id) %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

@@ -1,4 +1,5 @@
 class Lesson < ApplicationRecord
+  has_many :bookings, through: :profiles
   belongs_to :tutor, class_name: 'User'
   belongs_to :category
   before_save do |lesson|
