@@ -7,6 +7,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def your
+    @my_bookings = Booking.where(student_id: current_user)
+  end
+
   def add_booking
   end
 

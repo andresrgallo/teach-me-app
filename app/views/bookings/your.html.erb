@@ -1,0 +1,27 @@
+<h1>Your Bookings</h1>
+
+<% if @my_bookings.empty? %>
+  <p>No Bookings yet</p>
+  <td><%= link_to 'home', root_path %></td>
+<% else %>
+  <table>
+  <thead>
+    <tr>
+      <th>Booked on</th>
+      <th>Lesson</th>
+      <th>Tutor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.created_at.strftime("%Y-%m-%d") %></td>
+        <td><%= booking.lesson.description %></td>
+        <td><%= link_to booking.lesson.tutor.profile.first_name, profile_path(booking.lesson.tutor.profile.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

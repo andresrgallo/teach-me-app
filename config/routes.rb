@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :bookings
+  resources :bookings do
+    collection do
+      get :your
+    end
+  end
 
   devise_for :users
 

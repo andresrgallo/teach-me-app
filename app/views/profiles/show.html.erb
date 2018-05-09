@@ -3,10 +3,11 @@
 <% if @profile.user.id == current_user.id %>
 <p><%= link_to 'Edit Profile', edit_profile_path(@profile) %></p>
 <% end %>
-<% if @profile.member_id == 2 %>
 <p>
 <%= image_tag @profile.avatar(:thumb) %>
 </p>
+<% if @profile.member_id == 2 %>
+
 <p>
   <strong>Tutor</strong>
 </p>
@@ -64,15 +65,24 @@
   <%= @profile.twitter_account %>
 </p>
 
+<% if current_user.profile.member_id == 1 && current_user.id == @profile.user.id  %>
+        <p><a><%= link_to 'Your Bookings', your_bookings_path %></a></p>
+  <% else %>
+  <% end %>
+
+  <% if current_user.profile.member_id == 2 && current_user.id == @profile.user.id  %>
+  <%= link_to 'Add Lesson', new_lesson_path %>
+  <%= link_to 'View Your Lessons', your_lessons_path %>
+<% end %>
+
 <% if @profile.user.id != current_user.id %>
 <% if !current_user %>
+      <p></p>
         <p><a class="btn btn-primary" href="/users/sign_in" role="button">Sign in and add reviews!</a></p>
     <% else %>
         <a class="btn btn-primary" href="/profiles/<%=@profile.id%>/reviews/new" role="button">Add review for <%= @profile.first_name %></a>
     <% end %>
     <% end %>
-
-    
 
     <% if @reviews.blank? %>
         <h3>No reviews just yet</h3>
@@ -82,28 +92,6 @@
     </div>
     <% end %>
 
-<%# try if p.user.lessons.blank the is a student %>
-
-<%# if @profile.user.id == current_user.id %>
-<%# if @profile.member_id == 2 %>
-  <%#= link_to 'Add Lesson', new_lesson_path %>
-  <%#= link_to 'View Your Lessons', your_lessons_path %>
-<%# end %>
-<%# end %>
-  <%#= link_to 'Rate me!!', new_profile_review_path(@profile) %>
-  <%#= link_to 'See all Reviews', profile_reviews_url(@profile) %>
-
-    <%# else %>
-  <%# @reviews.each do |review| %>
-    <div class="reviews">
-      <%#= review.rating %>
-      <%#= review.comment %>
-      <%#= review.student.profile.first_name %>
-      <%#= time_ago in_words(review.created_at) %>
-  <%# end %>
-  <%# end %>
-   
-    </div>
 
 
 
