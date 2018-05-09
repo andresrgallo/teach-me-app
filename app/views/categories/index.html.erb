@@ -2,7 +2,10 @@
 		<h1>Share your skills or learning something new!</h1>
 		<% @categories.each do |c| %>
 			<div style="padding-bottom:3rem" class="col-sm-4 text-center pb-3">
-				<%= link_to c.description, category_path(c.id) %>
+				<span>
+					<%= link_to c.description, category_path(c.id) %>
+				</span>
+				<br>
 				<%= image_tag c.image(:square) %>
 				</a>
 			</div>
