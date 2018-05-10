@@ -13,7 +13,9 @@ class ApplicationController < ActionController::Base
   end
 
     def after_sign_in_path_for(resource_or_scope)
-      if Profile.exists?(:user_id => current_user.id)
+      if current_user.admin
+        profiles_path
+      elsif Profile.exists?(:user_id => current_user.id)
         profile_path(current_user.profile.id)
       else
       "/profile"
