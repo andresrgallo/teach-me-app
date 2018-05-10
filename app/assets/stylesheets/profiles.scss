@@ -1,3 +1,72 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.containera {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0.3rem;
+    line-height: 3rem;
+    font-size: 2rem;
+}
+.edit {
+    grid-column: 1 / 6;
+}
+.imge {
+    border-radius: 25px;
+}
+.pic {
+    border-radius: 25px;
+    grid-column: 5 / 6;
+    text-align: center;
+}
+.title {
+    grid-column: 5 / 6;
+    text-align: center;
+}
+.first {
+    grid-column: 3/ 6;
+}
+.last {
+    grid-column: 3 / 6;
+}
+.address {
+    grid-column: 3 / 6;
+}
+.state {
+    grid-column: 3 / 6;
+}
+.suburb {
+    grid-column: 3 / 6;
+}
+.postcode {
+    grid-column: 3 / 6;
+}
+.qualifications {
+    grid-column: 3 / 7;
+}
+.work {
+    grid-column: 3 / 7;
+}
+.facebook {
+    grid-column: 3 / 6;
+}
+.twitter {
+    grid-column: 3 / 6;
+}
+.btns {
+    margin: 3rem 0 3rem 25%;
+}
+// form
+
+input {
+    width: 60rem;
+}
+textarea {
+    width: 60rem;
+}
+.form-group {
+    margin-left: 20%;
+}
+.actions {
+    margin-left: 30%;
+}

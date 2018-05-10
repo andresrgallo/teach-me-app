@@ -15,7 +15,7 @@
     <%#= form.label :user_id %>
     <%#= form.text_field :user_id, id: :lesson_user_id %>
   </div>
-
+<div class="container">
   <div class="field">
     <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.order(:description),:id,:description, include_blank: false %>
@@ -35,8 +35,9 @@
     <%= form.label :price_hr %>
     <%= form.number_field :price_hr, id: :lesson_price_hr %>
   </div>
+  </div>
 
-  <div class="actions">
+  <div style="margin-left:2%;margin-top:3rem" class="actions">
     <%= form.submit %>
   </div>
 <% end %>

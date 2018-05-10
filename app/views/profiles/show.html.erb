@@ -1,89 +1,91 @@
 <p id="notice"><%= notice %></p>
 
+<div class="containera">
 <% if @profile.user.id == current_user.id %>
-<p><%= link_to 'Edit Profile', edit_profile_path(@profile) %></p>
+<h4 class="edit"><%= link_to 'Edit Profile', edit_profile_path(@profile) %></h4>
 <% end %>
-<p>
-<%= image_tag @profile.avatar(:thumb) %>
-</p>
 <% if @profile.member_id == 2 %>
 
-<p>
+<div class="title">
   <strong>Tutor</strong>
-</p>
 <% else %>
   <strong>Student</strong>
 <% end %>
+</div>
+<div class="pic">
+<span class="imge"><%= image_tag @profile.avatar(:medium) %></span>
+</div>
 
-<p>
+<div class="first">
   <strong>First name:</strong>
   <%= @profile.first_name %>
-</p>
+</div>
 
-<p>
+<div class="last">
   <strong>Last name:</strong>
   <%= @profile.last_name %>
-</p>
+</div>
 
-<p>
+<div class="address">
   <strong>Address:</strong>
   <%= @profile.address %>
-</p>
+</div>
 
-<p>
+<div class="state">
   <strong>State:</strong>
   <%= @profile.state %>
-</p>
+</div>
 
-<p>
+<div class="suburb">
   <strong>Suburb:</strong>
   <%= @profile.suburb %>
-</p>
+</div>
 
-<p>
+<div class="postcode">
   <strong>Postcode:</strong>
   <%= @profile.postcode %>
-</p>
+</div>
 
-<p>
+<div class="qualifications">
   <strong>Qualifications:</strong>
   <%= @profile.qualifications %>
-</p>
+</div>
 
-<p>
+<div class="work">
   <strong>Work experience:</strong>
   <%= @profile.work_experience %>
-</p>
+</div>
 
-<p>
+<div class="facebook">
   <strong>Facebook account:</strong>
   <%= @profile.facebook_account %>
-</p>
+</div>
 
-<p>
+<div class="twitter">
   <strong>Twitter account:</strong>
   <%= @profile.twitter_account %>
-</p>
-
+</div>
+</div>
+<div class="btns">
 <% if current_user.profile.member_id == 1 && current_user.id == @profile.user.id  %>
-        <p><a><%= link_to 'Your Bookings', your_bookings_path %></a></p>
+        <span class="yourb"><a><%= link_to 'Your Bookings', your_bookings_path %></a></span>
   <% else %>
   <% end %>
 
   <% if current_user.profile.member_id == 2 && current_user.id == @profile.user.id  %>
-  <%= link_to 'Add Lesson', new_lesson_path %>
-  <%= link_to 'View Your Lessons', your_lessons_path %>
-  <%= link_to 'Lessons booked', bookings_path %>
+  |<span class='ad'><%= link_to 'Add Lesson', new_lesson_path %></span>
+  |<span class="vy"><%= link_to 'View Your Lessons', your_lessons_path %></span>
+  |<span class="lb"><%= link_to 'Lessons booked', bookings_path %></span>
 <% end %>
 
 <% if @profile.user.id != current_user.id %>
 <% if !current_user %>
-      <p></p>
-        <p><a class="btn btn-primary" href="/users/sign_in" role="button">Sign in and add reviews!</a></p>
+        <span class='sr'><a class="btn btn-primary" href="/users/sign_in" role="button">Sign in and add reviews!</a></span>
     <% else %>
-        <a class="btn btn-primary" href="/profiles/<%=@profile.id%>/reviews/new" role="button">Add review for <%= @profile.first_name %></a>
+       <span class="pr"> <a class="btn btn-primary" href="/profiles/<%=@profile.id%>/reviews/new" role="button">Add review for <%= @profile.first_name %></a></span>
     <% end %>
     <% end %>
+</div>
 
     <% if @reviews.blank? %>
         <h3>No reviews just yet</h3>
@@ -92,7 +94,5 @@
         <%= render @reviews %>
     </div>
     <% end %>
-
-
 
 

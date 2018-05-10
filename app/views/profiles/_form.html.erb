@@ -11,50 +11,52 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="form-group">
+  <label for="fromGroupFirstName">
+  <div class="col-7">
     <%= form.label :first_name %>
     <%= form.text_field :first_name, id: :profile_first_name %>
-  </div>
+  </label>
 
-  <div class="field">
+  <label for="fromGroup">
     <%= form.label :last_name %>
     <%= form.text_field :last_name, id: :profile_last_name %>
-  </div>
+  </label>
 
-  <div class="field">
+  <label for="fromGroup">
     <%= form.label :member_id %>
     <%= form.collection_select :member_id, Member.order(:description),:id,:description, include_blank: false %>
-  </div>
+  </label>
 
-  <div class="field">
+  <label for="fromGroup">
     <%= form.label :address %>
     <%= form.text_field :address, id: :profile_address %>
-  </div>
+  </label>
 
-  <div class="field">
+  <label for="fromGroup">
     <%= form.label :state %>
     <%= form.text_field :state, id: :profile_state %>
-  </div>
+  </label>
 
-  <div class="field">
+  <label for="fromGroup">
     <%= form.label :suburb %>
     <%= form.text_field :suburb, id: :profile_suburb %>
-  </div>
+  </label>
 
-  <div class="field">
+  <label for="fromGroup">
     <%= form.label :postcode %>
     <%= form.text_field :postcode, id: :profile_postcode %>
-  </div>
+  </label>
 
-  <div class="field">
+  <label for="fromGroup">
     <%= form.label :qualifications %>
     <%= form.text_area :qualifications, id: :profile_qualifications %>
-  </div>
+  </label>
 
-  <div class="field">
+  <label class="field">
     <%= form.label :work_experience %>
     <%= form.text_area :work_experience, id: :profile_work_experience %>
-  </div>
+  </label>
 
   <div class="field">
     <%= form.label :facebook_account %>
@@ -70,6 +72,9 @@
     <%= form.label :avatar %>
     <%= form.file_field :avatar %>
   </div>
+  </div>
+  </div>
+  </>
   <% if profile.valid? %>
   <% if  profile.user_id != current_user.id %>
   <div class="fieldset">

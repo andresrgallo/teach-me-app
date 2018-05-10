@@ -1,17 +1,19 @@
-<div class="row">
-		<h1>Share your skills or learning something new!</h1>
-		<p><%= form_tag(categories_path, method: :get) do %>
-			<%= text_field_tag :term, params[:term] %>
-			<%= submit_tag 'Search', name: nil %></p>
-		<% end %>
-		<% @categories.each do |c| %>
-			<div style="padding-bottom:3rem" class="col-sm-4 text-center pb-3">
-				<span>
-					<%= link_to c.description, category_path(c.id) %>
-				</span>
-				<br>
-				<%= image_tag c.image(:square) %>
-				</a>
-			</div>
-        <% end %>
+<div class="bg-dark">
+	<div class="row">
+			<h1>Share your skills or learn something new!</h1>
+			<div style="margin-left:20%"><%= form_tag(categories_path, method: :get) do %>
+				<%= text_field_tag :term, params[:term] %>
+				<%= submit_tag 'Search', name: nil %></div>
+			<% end %>
+			<% @categories.each do |c| %>
+				<div style="padding-bottom:3rem" class="col-sm-4 text-center pb-3">
+					<span>
+						<div class="h2 text-dark"><%= link_to c.description, category_path(c.id) %></div>
+					</span>
+					<br>
+					<%= image_tag c.image(:square) %>
+					</a>
+				</div>
+			<% end %>
+	</div>
 </div>
