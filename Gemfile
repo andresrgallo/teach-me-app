@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'cancancan'
 gem 'stripe'
 gem 'paperclip'
 gem 'aws-sdk', '~> 3.0', '>= 3.0.1'

@@ -8,7 +8,6 @@ class ChargesController < ApplicationController
         # student_id = current_user.id
         @booking = Booking.create(lesson_id: @lesson.id, student_id: current_user.id )
         # Rails.logger.info "charge=#{charge.inspect}"
-        p @booking
         customer = Stripe::Customer.create(
             :email => params[:stripeEmail],
             :source  => params[:stripeToken]

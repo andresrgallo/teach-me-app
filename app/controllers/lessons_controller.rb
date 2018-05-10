@@ -1,6 +1,8 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :show]
+  before_action :authorize_admin, only: [ :index ]
+  # load_and_authorize_resource
 
   # GET /lessons
   # GET /lessons.json
