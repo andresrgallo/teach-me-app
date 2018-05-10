@@ -241,6 +241,16 @@ to go browse the text.
 
 ### Trello
 
+## Links to Trello 
+
+- Documentation
+
+https://trello.com/b/PGTwG0GG/teachme-app-documentation
+
+- Build Process
+
+https://trello.com/b/Lw87kvKr/teachme-app-build-process
+
 ![GitHub Logo](Documentation/trello-Documentation.png)
 
 ![GitHub Logo](Documentation/Trello-Build-process-A.png)
@@ -285,3 +295,11 @@ Completed
 - Admin interface
 2 hrs
 Incomplete
+
+### Future Developments
+
+- Planning to integrate Skype for a fast and easy way of communication without leaving the app.
+- Integrate email system so Users can communicate with each other without leaving the app.
+- Improve admin features buy building an easy to manage panel interface.
+
+
