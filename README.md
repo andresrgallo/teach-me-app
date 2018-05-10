@@ -307,4 +307,6 @@ Incomplete
 - Used css grid for profiles views and they work perfectly under my local host but not at herokus app page. 
 - Favicon does not display too
 
+### Code Reviews
+- Did code reviews with Lux, Sam Foong and with Frank, I did learn to organize my code much better.
 
