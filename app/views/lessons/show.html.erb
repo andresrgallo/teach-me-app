@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @lesson.category.description %>
+  <h3><strong>Category:</strong>
+  <%= @lesson.category.description %></h3>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @lesson.description %>
+  <h3><strong>Lesson:</strong>
+  <%= @lesson.description %></h3>
 </p>
 
 <%= form_tag charges_path do %>
@@ -17,9 +17,14 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
+   <h3> <strong>Details:</strong></h3>
+  <p><%= @lesson.details %></p>
     <label class="amount">
       <span>Amount: $<%= @lesson.price_hr %> AUD</span>
     </label>
+    <p>
+  
+</p>
   </article><br>
 <%= hidden_field_tag 'lesson_id', @lesson.id %>
 <% if @lesson.tutor.id != current_user.id %>

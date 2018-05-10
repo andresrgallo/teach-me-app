@@ -1,3 +1,9 @@
+#Teachme app
+
+Major assignment Term 2
+
+View live: https://teachme-app.herokuapp.com/
+
 # Problem Definition and Solution
 ## Problem
 
@@ -193,20 +199,52 @@ Students can arrange with tutors the number of lessons they wish at a desired pa
 
 ## Style Guide
 
+Colours and fonts used:
+
 ### Colour Scheme
 
-![GitHub Logo](Colour_Scheme.png)
+![GitHub Logo](Documentation/Colour_Scheme.png)
 
 ### Font
 
-![GitHub Logo](Font_Roboto.png)
+![GitHub Logo](Documentation/Font_Roboto.png)
+![GitHub Logo](Documentation/FontExo.png)
+
+Decided to used soft colors in order to give more attention to
+the skill Categories available.  Fonts give more style and make it easier
+to go browse the text.
+
+## Wireframes
+
+# Mobile
+
+![GitHub Logo](Documentation/mobhomepage.png)
+![GitHub Logo](Documentation/mobcategory.png)
+![GitHub Logo](Documentation/mob[profile].png)
+![GitHub Logo](Documentation/mobprofiletutor.png)
+![GitHub Logo](Documentation/mobreviews.png)
+![GitHub Logo](Documentation/mobsignup.png)
+![GitHub Logo](Documentation/moblessons.png)
+
+# Desktop
+
+![GitHub Logo](Documentation/deskthome.png)
+![GitHub Logo](Documentation/desktcategory.png)
+![GitHub Logo](Documentation/desktprofileshow.png)
+![GitHub Logo](Documentation/desktsignin.png)
+![GitHub Logo](Documentation/desktprofileform.png)
 
 ## Work Flow
 
-![GitHub Logo](Work_Flow.png)
-
+![GitHub Logo](Documentation/Work_Flow.png)
 
 ### ERD
 
-![GitHub Logo](ERD.png)
+![GitHub Logo](Documentation/ERD.png)
 
+### Trello
+
+![GitHub Logo](Documentation/trello-Documentation.png)
+
+![GitHub Logo](Documentation/Trello-Build-process-A.png)
+![GitHub Logo](Documentation/Trello-Build-process-B.png)
