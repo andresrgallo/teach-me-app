@@ -217,11 +217,11 @@ to go browse the text.
 
 ![GitHub Logo](Documentation/mobhomepage.png)
 ![GitHub Logo](Documentation/mobcategory.png)
-![GitHub Logo](Documentation/mob[profile].png)
+![GitHub Logo](Documentation/mobprofile.png)
 ![GitHub Logo](Documentation/mobprofiletutor.png)
 ![GitHub Logo](Documentation/mobreviews.png)
 ![GitHub Logo](Documentation/mobsignup.png)
-![GitHub Logo](Documentation/moblessons.png)
+![GitHub Logo](Documentation/mobmylessons.png)
 
 # Desktop
 
@@ -301,5 +301,10 @@ Incomplete
 - Planning to integrate Skype for a fast and easy way of communication without leaving the app.
 - Integrate email system so Users can communicate with each other without leaving the app.
 - Improve admin features buy building an easy to manage panel interface.
+
+### Extra notes (May be some Heroku bugs)
+
+- Used css grid for profiles views and they work perfectly under my local host but not at herokus app page. 
+- Favicon does not display too
 
 
