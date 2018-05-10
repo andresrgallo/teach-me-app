@@ -20,13 +20,6 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-
-        # if params[:images]
-        #   params[:images].each { |image|
-        #     @category.images_categories.create(image: image)
-        #   }
-        # end
-
         format.html { redirect_to @category, notice: 'category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else

@@ -20,8 +20,10 @@
         <td><%= booking.created_at.strftime("%Y-%m-%d") %></td>
         <td><%= booking.lesson.description %></td>
         <td><%= link_to booking.lesson.tutor.profile.first_name, profile_path(booking.lesson.tutor.profile.id) %></td>
+        <td><%= link_to booking.lesson.tutor.profile.last_name, profile_path(booking.lesson.tutor.profile.id) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to 'Add new booking', root_path %>
 <% end %>

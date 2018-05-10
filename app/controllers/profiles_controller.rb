@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    @profiles = Profile.order(:first_name)
   end
 
   def current

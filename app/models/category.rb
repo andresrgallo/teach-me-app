@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-    has_many :lessons
+    has_many :lessons, -> { order "description asc"}, dependent: :destroy
     # validates :description, :presence => true
     before_save do |category|
         category.description = category.description.downcase.titleize
