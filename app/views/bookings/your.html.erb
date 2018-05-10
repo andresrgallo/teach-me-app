@@ -1,8 +1,8 @@
 <h1>Your Bookings</h1>
 
 <% if @my_bookings.empty? %>
-  <p>No Bookings yet</p>
-  <td><%= link_to 'home', root_path %></td>
+  <h3>No Bookings yet</h3>
+  <td style='font-size:2rem'><%= link_to 'home', root_path %></td>
 <% else %>
   <table class="table table-striped">
   <thead>

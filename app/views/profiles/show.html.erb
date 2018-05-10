@@ -82,7 +82,7 @@
 <% if !current_user %>
         <span class='sr'><a class="btn btn-primary" href="/users/sign_in" role="button">Sign in and add reviews!</a></span>
     <% else %>
-       <span class="pr"> <a class="btn btn-primary" href="/profiles/<%=@profile.id%>/reviews/new" role="button">Add review for <%= @profile.first_name %></a></span>
+       <span class="pr"> <a class="btn btn-primary" href="/profiles/<%=@profile.id%>/reviews/new" role="button" style="color:black">Add review for <%= @profile.first_name %></a></span>
     <% end %>
     <% end %>
 </div>

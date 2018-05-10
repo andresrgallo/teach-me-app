@@ -126,9 +126,6 @@ Students can arrange with tutors the number of lessons they wish at a desired pa
 - then I should be able to see my review and
 - rating printed under the profile
 
-
-
-
 ***User should not be able to open a message conversation with themselves***
 
 **Feature:** Unable to message self
@@ -247,4 +244,44 @@ to go browse the text.
 ![GitHub Logo](Documentation/trello-Documentation.png)
 
 ![GitHub Logo](Documentation/Trello-Build-process-A.png)
-![GitHub Logo](Documentation/Trello-Build-process-B.png)
+![GitHub Logo](Documentation/Build-process-B.png)
+
+### MVP Features (with estimation time and status)
+
+- User log in, sign up and sign out
+1.5 hrs
+Completed
+- Profile (redirection when signed in)
+1 hr
+Completed
+- Users profile - view and edit
+3 hrs
+Completed
+- Reviews - view and add to profile
+2 hrs
+completed
+- Lessons - create, view and edit
+2.5 hrs
+- Image uploading to Amazon S3 (avatar and listing images)
+4.5 hrs
+Completed
+- Bookings - views and integration
+3 hrs
+Completed
+- Search Categories (refinement and sort included)
+1 hr
+- Stripe payment integration
+3 hrs
+Completed
+- Mailgrid and Action Mailer - Integration and Heroku
+5 hrs
+Completed
+- Minimal CSS
+5 hrs
+Completed
+- Uploaded on Heroku
+1.5 hrs
+Completed
+- Admin interface
+2 hrs
+Incomplete
