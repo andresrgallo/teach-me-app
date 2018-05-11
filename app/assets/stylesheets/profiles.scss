@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .containera {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 0.3rem;
     line-height: 3rem;
     font-size: 2rem;
 }
 .edit {
-    grid-column: 2 / 7;
+    grid-column: 1 / 6;
 }
 .imge {
     border-radius: 25px;
