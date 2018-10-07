@@ -4,7 +4,7 @@
   <%= @category.description %>
 </h1>
 
-<%= image_tag @category.image(:medium) %>
+<%= image_tag @category.image(:medium), class:"category_image" %>
 <div class="col-md-8">
     <% if @category.lessons.any? %>
       <h3 style="padding-bottom:2rem">Lessons</h3>
