@@ -120,6 +120,7 @@ footer ul li {
 }
 
 .hero-image img {
+  display: inline-block;
   width: 370px;
   border-radius: 20px;
   box-shadow: 0 5px 5px #2d2b2b;
@@ -136,4 +137,21 @@ input[type='submit'] {
 .category_image {
   border-radius: 20px;
   width: 370px;
+}
+/* Media queries */
+
+@media only screen and (max-width: 1200px) {
+  .hero-image img {
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .hero-image img {
+    width: 220px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hero-image img {
+    width: 270px;
+  }
 }
