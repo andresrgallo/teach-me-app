@@ -9,6 +9,12 @@ body {
 a {
   color: #222;
 }
+
+.rowm {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 section {
   overflow: auto;
 }
@@ -57,11 +63,12 @@ p {
 }
 
 /* header */
-
 #my_logo img {
-  padding-top: 0.3rem;
   height: 6rem;
   float: left;
+  width: auto;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .logo {
@@ -77,6 +84,36 @@ p {
   //     // color: rgb(121, 117, 117);
   //     text-decoration: none;
   //   }
+}
+
+.nav-options {
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+}
+
+.nav-options li {
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 10px;
+  list-style: none;
+}
+
+.mobile-nav-menu {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer;
+  display: none;
+}
+.mobile-nav-exit {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+ion-icon {
+  font-size: 300%;
 }
 
 /* footer */
@@ -128,21 +165,49 @@ footer ul li {
 
 #term,
 input[type='submit'] {
-  width: 30rem;
+  width: 20rem;
   height: 35px;
   border-radius: 10px;
   font-size: 20px;
+}
+
+.profile-actions input[type='submit'] {
+  width: 20rem;
+  height: 35px;
+  margin-left: 100px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: rgb(88, 156, 247);
 }
 
 .category_image {
   border-radius: 20px;
   width: 370px;
 }
+
+/* devise */
+.devise-actions input[type='submit'] {
+  width: 20rem;
+  height: 35px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.reset-devise #user_email {
+  width: 20rem;
+  height: 35px;
+  border-radius: 10px;
+}
+
 /* Media queries */
 
 @media only screen and (max-width: 1200px) {
   .hero-image img {
     width: 300px;
+  }
+  header {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -153,5 +218,31 @@ input[type='submit'] {
 @media only screen and (max-width: 767px) {
   .hero-image img {
     width: 270px;
+  }
+
+  .mobile-nav-menu {
+    display: inline-block;
+  }
+
+  .navbar-nav > li > a {
+    padding: 0px;
+    font-size: 90%;
+  }
+
+  .main-nav {
+    float: left;
+  }
+
+  .main-nav li {
+    display: block;
+  }
+
+  .main-nav a {
+    font-size: 80%;
+  }
+
+  .nav-options {
+    padding-left: 70px;
+    display: none;
   }
 }

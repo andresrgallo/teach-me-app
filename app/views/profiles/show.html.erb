@@ -1,16 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="containera">
+<h1>Profile</h1>
+</div>
+<div class='row profile-grid'>
 <% if @profile.user.id == current_user.id %>
-<h4 class="edit"><%= link_to 'Edit Profile', edit_profile_path(@profile) %></h4>
+<span class="edit-profile"><%= link_to 'Edit Profile', edit_profile_path(@profile), class: 'btn btn-info edit-button' %></span>
 <% end %>
 <% if @profile.member_id == 2 %>
 
 <div class="title">
   <strong>Member</strong>
-
 <% end %>
-</div>
 <div class="pic">
 <span class="imge"><%= image_tag @profile.avatar(:medium) %></span>
 </div>
@@ -63,6 +64,7 @@
 <div class="twitter">
   <strong>Twitter account:</strong>
   <%= @profile.twitter_account %>
+</div>
 </div>
 </div>
 <div class="btns">

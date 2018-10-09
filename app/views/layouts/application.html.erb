@@ -16,5 +16,30 @@
     <%= yield %>
     <%= render "layouts/footer" %>
     </div>
+    <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+    <script> 
+      var navOptions = document.querySelector('.nav-options');
+var mobNav = document.querySelector('.mobile-nav-menu');
+var closeNav = document.querySelector('.mobile-nav-exit');
+
+mobNav.onclick = function () {
+  mobNav.style.display = 'none';
+  closeNav.style.display = 'inline-block';
+  navOptions.style.display = 'block';
+
+  closeNav.onclick = mobNav.onclick = function() { 
+      mobNav.style.display = "none"; 
+      closeNav.style.display = "inline-block"; 
+      navOptions.style.display = 'block'
+      };
+      
+  closeNav.onclick = function removeIcon() {
+    mobNav.style.display = 'inline-block';
+    closeNav.style.display = 'none';
+    navOptions.style.display = 'none';
+  }
+}
+
+    </script>
   </body>
 </html>

@@ -1,18 +1,19 @@
 <header style="background-color:#E0F9FA" class="navbar navbar-light navbar-fixed-top">
-      <div class="container">
+        <nav class="main-nav">
+      <div class="rowm">
+      <div class="logo-img">
        <%= link_to image_tag("TMlogo.jpg"), root_path, id: "my_logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-        <li style="padding-right:3rem;font-size:2rem;margin-top:1rem"><%= link_to "Home", root_path %></li>
+          <ul class="nav-options">
+        <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
           <li class="dropdown">
-            <a style="height:6rem;text-align:center;width:20rem;font-size:2rem;margin-top:1rem;" href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
             </a>
             <ul style="background-color:#d9e6eaf5" class="dropdown-menu">
               <li class="divider"></li>
               <li>
-              <a style="text-align:center;font-size:2rem" class="dropdown-item nav-link" href="/profile">Profile</a>
+              <a style="margin-left:2rem;text-align:center;font-size:2rem" class="dropdown-item nav-link" href="/profile">Profile</a>
               </li>
               <li class="divider"></li>
               <li style="text-align:center;font-size:2rem">
@@ -25,6 +26,9 @@
           <li style="font-size:2rem;margin-top:1rem"><%= link_to "Log in", user_session_path %></li>
         <% end %>
       </ul>
-    </nav>
+      </div>
   </div>
+    </nav>
+            <a class="mobile-nav-menu"><ion-icon class="mobile-nav-icon" name="menu"></ion-icon></a>
+            <a class="mobile-nav-exit"><ion-icon class="mobile-nav-x" name="close"></ion-icon></a>
 </header>
