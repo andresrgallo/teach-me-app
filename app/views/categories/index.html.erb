@@ -12,7 +12,7 @@
 					</span>
 					<br>
           <div class='hero-image'>
-            <%= image_tag c.image(:square) %>
+            <%= link_to image_tag(c.image(:square)), category_path(c.id) %>
           </div>
 					</a>
 				</div>
